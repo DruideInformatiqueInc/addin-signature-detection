@@ -183,6 +183,7 @@
               <LaunchEvents>
                 <LaunchEvent Type="OnNewMessageCompose" FunctionName="OnNewMessageCompose"/>
                 <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="OnMessageRecipientsChanged"/>
+                <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               </LaunchEvents>
               <SourceLocation resid="AutoLaunch.Url"/>
             </ExtensionPoint>
