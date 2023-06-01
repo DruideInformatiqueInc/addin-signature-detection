@@ -19,5 +19,16 @@ Office.actions.associate('OnMessageRecipientsChanged', (event) => {
 })
 
 Office.actions.associate('onMessageSendHandler', (event) => {
-    event.completed({ allowEvent: false})
+    Office.context.mailbox.item.body.getAsync(
+        "text",
+        { asyncContext: event },
+        getBodyCallback
+      );
 })
+
+function getBodyCallback(asyncResult){
+    let event = asyncResult.asyncContext;
+    let message = "Envoie interdit";
+    event.completed({ allowEvent: false ,errorMessage: message });
+    return;
+  }
